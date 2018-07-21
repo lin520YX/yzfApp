@@ -1,0 +1,22 @@
+page-return-visit {
+    .content{
+        background:#fff !important;
+    }
+    .menu-button {
+        height: 100%;
+        width: 100%;
+        padding: 15px 0;
+        div {
+          text-align: center;
+          color: #666666;
+          font-size: 13px;
+          img {
+            width: 60%;
+            height: 60%;
+          }
+        }
+      }
+      .bottomLines{
+        border-bottom: 1px solid rgba(229,229,229, 1.0);
+      }
+}

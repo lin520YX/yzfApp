@@ -1,0 +1,56 @@
+<!--
+  Generated template for the SaleSelectFoodPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>退货录入</ion-title>
+  </ion-navbar>
+  <!-- <ion-scroll scrollX="true" class="pageMenuSlides" style="height:44px;width:100%;">
+      <div class="swipercontainer"  >
+        <div class="swiper-slide {{r==I?'bottomLine':''}}" [ngStyle]="{'width':companyList}" *ngFor="let item of menus;let I=index;" (tap)="selectPageMenu($event,I,item.id)">{{item.name}}</div>
+      </div>
+    </ion-scroll> -->
+</ion-header>
+<ion-content>
+  <div class="cate_content"  >
+    <div class="cate_left">
+      <ul>
+        <li *ngFor="let item of leftCate;let index = index;" class="{{i==index?'sactive':'noactive'}}" (tap)='select(index)'>
+            {{item.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="cate_right"  #div (scroll)='test()'  #container>
+      <ion-row *ngFor="let item of rightCate;let index = index;">
+          <ion-col col-12 class="itemcol">
+             {{item.name}}
+            </ion-col>
+        <ion-col col-4 (tap)='foodSelect(index,i,ite.saleQty,ite.goodsName)' *ngFor="let ite of item.list;let i = index;">
+          <ion-checkbox color="danger" class="check" [(ngModel)]="ite.checked"></ion-checkbox>
+          <img [defaultImage]='defaultImage' [lazyLoad]='appUrl.apiUrl+ite.goodsPic'  [offset]='offset' [scrollObservable]="srollEvent$" [scrollTarget]="container" >
+          <p>{{ite.goodsName}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+</div>
+</ion-content>
+<ion-footer >
+    <div class="select">
+        <div class="caculator">
+          <div>
+              <ion-icon name='crt' class="cart"></ion-icon>
+              <span>{{num}}</span>
+          </div>
+          <div>
+            <span>总计:</span>
+            <span>¥{{priceTotal|number:'1.2-2'}}</span>
+          </div>
+        </div>
+        <div class="verify" (tap)='saleSubmit()'>
+          确定选择
+       </div>
+     </div>
+</ion-footer>

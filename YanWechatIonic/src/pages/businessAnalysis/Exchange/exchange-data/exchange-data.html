@@ -1,0 +1,80 @@
+<!--
+  Generated template for the ExchangeDataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar id='navbar'>
+    <ion-title>兑换统计</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="openModal()">
+        <span class="sNameType">
+          <p>{{startTime}}</p>
+          <p>{{endTime}}</p>
+        </span>
+        <ion-icon name="md-arrow-dropdown"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="headDiv" *ngIf='storeMapLength'>
+    <ion-item>
+      <ion-label>门店：</ion-label>
+      <ion-select [(ngModel)]="storeSelected" okText="确定" cancelText="取消" (ionChange)='changeStore()'>
+        <ion-option value="">全部</ion-option>
+        <ion-option *ngFor='let item of storeMap' value="{{item.id}}">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="orderList listHeader">
+    <div>产品</div>
+    <div>
+      兑换量
+    </div>
+    <div>
+    </div>
+  </div>
+  <div class="orderList" *ngIf='tList'>
+    <div>{{tList.goodsName}}</div>
+    <div>
+      {{tList.num}}
+    </div>
+    <div>
+    </div>
+  </div>
+  <div class="orderList" *ngFor='let item of list' (tap)='getDetail(item.goodsNo,item.goodsName)'>
+    <div>{{item.goodsName}}</div>
+    <div>
+      {{item.num}}
+    </div>
+    <div>
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </div>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf='moreData'>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+<div class="timeContent" [ngStyle]="{top:device}" *ngIf='timeSelect;' (tap)='timeOption($event)'>
+  <div class="dateContent">
+    <div class="timeBtnTitle">自定义</div>
+    <div class="timeInput">
+      <div>
+        <span>开始时间</span>
+        <ion-item no-lines>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="startTime" doneText="确定" cancelText="取消"></ion-datetime>
+        </ion-item>
+      </div>
+      <div>
+        <span>结束时间</span>
+        <ion-item no-lines>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="endTime" doneText="确定" cancelText="取消"></ion-datetime>
+        </ion-item>
+      </div>
+    </div>
+    <button (tap)='timeZoneSelect()' class="qbtn">确定</button>
+  </div>
+</div>

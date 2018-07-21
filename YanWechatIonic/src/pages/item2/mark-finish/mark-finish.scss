@@ -1,0 +1,171 @@
+page-mark-finish {
+    .content {
+        background: #fff !important;
+      }
+      .zhts{
+          height: 1rem;
+          background: #f6f6f6;
+      }
+      .markF_top{
+          height: 15rem;
+          padding: 3rem 2rem 0 2rem;
+        //   background:  linear-gradient(left,  rgb(255, 255, 255), rgb(247, 221, 221));
+        //   background-image:linear-gradient(0deg, rgb(247, 221, 221) 1rem, rgb(247, 221, 221) 1rem);
+          color: #fff;
+          .mark_box{
+            width: 100%;
+            height: 100%;
+            -moz-box-shadow:2px 1px 40px rgb(247, 221, 221);
+            -webkit-box-shadow:2px 1px 40px rgb(247, 221, 221);
+             box-shadow:2px 1px 40px rgb(223, 19, 19);
+            background: linear-gradient(90deg,rgb(243, 80, 80), rgb(241, 7, 7));
+            border-top-left-radius:1rem;
+            border-top-right-radius:1rem;
+            display: flex;
+            flex-direction: column;
+            .mark_title:first-child{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                padding-top: 10px;
+                justify-content: center;
+                   div{
+                       p{
+                           text-align: center;
+                           margin: 0;
+                           font-size: 1.5rem;
+                       }
+                       span:not(:last-child){
+                            font-size: 3.5rem;
+                       }
+                   }
+                
+            }
+            .mark_title:last-child{
+                padding: 0 2rem;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                div:last-child{
+                    text-align: right;
+                }
+            }
+        }
+      }
+      .markF_bottom{
+        border-top: .55px solid rgba(255, 255, 255, 0.973);
+
+        margin-top:-1px;
+        .markContentTitle{
+            height: 4rem;
+            font-size: 1.8rem;
+            line-height: 4rem;
+            text-align: center;
+            font-weight: 350;
+            color: #444;
+            background: rgba(255, 255, 255, 0.973);
+            border-bottom: .55px solid rgba(219, 215, 215, 0.973);
+
+        }
+        .giftBlank{
+            height: 3rem;
+            line-height: 3rem;
+            padding-left: 1rem;
+        }
+        .bottomline{
+            border-bottom: .55px solid rgba(30, 30, 30,.3);
+            padding-bottom: 2rem;
+        }
+
+        .mClColor{
+            background: #f3e8e8;
+            display: flex;
+            min-height: 3rem;
+            align-items: center;
+            border-bottom: .55px solid rgba(30, 30, 30,.3);
+            p{
+                margin: 0;
+            }
+            
+            .markProName{
+                width: 55%;
+                padding-left: 1rem;
+                display: flex;
+                p{
+                    color: #666;
+                }
+                span{
+                    color: #666;
+                }
+            }
+            .markProNum{
+                width: 30%;
+                display: flex;
+                color: #666;
+                justify-content: center;
+            }
+            .markProGrade{
+                width: 15%;
+                display: flex;
+                justify-content: center;
+                color: #666;
+            }
+        }
+        .markContentList{
+            display: flex;
+            min-height: 5rem;
+            align-items: center;
+            border-bottom: .55px solid rgba(30, 30, 30,.3);
+            margin: 0 .8rem;    
+            p{
+                margin: 0;
+            }
+            .markProName{
+                width: 55%;
+                padding-left: 1.5rem;
+                padding: 1rem 0;
+                display: flex;
+                p{
+                    color: #666;
+                }
+                span{
+                    color: #666;
+                }
+            }
+            .markProNum{
+                width: 30%;
+                display: flex;
+                color: #666;
+                justify-content: center;
+            }
+            .markProGrade{
+                width: 15%;
+                display: flex;
+                justify-content: center;
+                color: #666;
+            }
+        }
+      }
+      .markInfoList{
+        
+          ul,li{
+              list-style: none;
+              margin: 0;
+              padding: 0;
+
+          }
+          li{
+              height: 4rem;
+              align-items: center;
+              display: flex;
+              justify-content:space-between;
+              padding: 0 .5rem;
+            //   font-size: 1rem;
+            color: #666;
+            border-bottom: .55px solid rgba(30, 30, 30,.3);
+             
+          }
+      }
+      
+}

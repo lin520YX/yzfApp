@@ -1,0 +1,121 @@
+page-sales-statement {
+  .content {
+    background: #fff !important;
+  }
+  .select-ios {
+    padding: 5px 8px 5px 16px;
+}
+  .select-md .select-icon .select-icon-inner {
+    color: #fff;
+  }
+  .select-ios .select-icon .select-icon-inner {
+    color: #fff;
+  }
+  .rowOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    border-bottom:0.56px solid #eee;
+    div{
+      height: 100%;
+      padding-top: 5%;
+      flex: 1;
+      text-align: center;
+      img{
+      	height: 48px;
+      }
+      p:first-child{
+        font-size: 1.6rem;
+      }
+      p:last-child{
+        font-size: 1.8rem;
+        color: #666;
+      }
+     
+      &:nth-child(2){
+        border: 0 solid #eee;
+        border-right-width: 0.56px;
+        border-left-width: 0.56px;
+      }
+    }
+  }
+  .rowtwo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    border-bottom:0.56px solid #eee;
+
+    .rowColumn{
+      height: 100%;
+      flex: 1;
+      text-align: center;
+      .rowchild:first-child{
+        border-bottom:0.56px solid #eee;
+
+      }
+      img{
+      	height: 48px;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+      }
+      p:first-child{
+        font-size: 1.6rem;
+      }
+      p:last-child{
+        font-size: 1.8rem;
+        color: #666;
+      }
+    }
+    .rowColumn:last-child{
+      display: flex;
+      flex-direction: column;
+      border-right: 0.56px solid #eee;
+      .rowchild{
+        padding-top: 3%;
+        flex: 1;
+      }
+    }
+    .rowColumn:first-child{
+      padding-top: 14%;
+      border-right: 0.56px solid #eee;
+    }
+    
+  }
+  .grid-group {
+  
+    div{
+     
+    }
+    
+    &:nth-child(3){
+      border: 0 solid #eee;
+      border-bottom-width: 0.56px;
+    }
+    &:nth-child(4){
+      border: 0 solid #eee;
+      border-right-width: 0.56px;
+      border-bottom-width: 0.56px;
+    }
+    &:nth-child(5){
+      border: 0 solid #eee;
+      border-bottom-width: 0.56px;
+    }
+    &:nth-child(6){
+      border: 0 solid #eee;
+      border-bottom-width: 0.56px;
+    }
+    &:nth-child(7){
+      border: 0 solid #eee;
+      border-right-width: 0.56px;
+      border-bottom-width: 0.56px;
+    }
+    &:nth-child(8){
+      border: 0 solid #eee;
+      border-bottom-width: 0.56px;
+    }
+  }
+}

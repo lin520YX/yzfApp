@@ -1,0 +1,155 @@
+<!--
+  Generated template for the StoreRankingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>门店排名</ion-title>
+    <ion-buttons end *ngIf='storeMapLength'>
+      <ion-select [(ngModel)]="storeSelected" okText="确定" cancelText="取消" (ionChange)='Store()' style="color: #fff;font-size: 1.5rem;">
+        <ion-option value="">全部事业部</ion-option>
+        <ion-option *ngFor='let item of storeMap' value="{{item.id}}">{{item.orgName}}</ion-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+  <div *ngIf='type==1'>
+      <div class="shopperSubheader" >
+          <span>
+            <div></div>
+            <div>门店</div>
+          </span>
+          <span *ngFor='let ite of monthly'>{{ite}}月份
+          </span>
+        </div>
+      <div class="shopList">
+          <span>
+            <div></div>
+            <div>合计(万元)</div>
+          </span>
+          <span>{{(total.amountC/10000)|number:'1.2-2'}}</span>
+          <span>{{(total.amountB/10000)|number:'1.2-2'}}</span>
+          <span>{{(total.amountA/10000)|number:'1.2-2'}}</span>
+        </div>
+  </div>
+</ion-header>
+<ion-content>
+  <!-- type2 -->
+  <div *ngIf='type==2'>
+    <div class="saleNum">
+      <div class="boxImg">
+
+      </div>
+      <div class="box">
+        <div class="img">
+          {{shopperRanking}}
+          <!-- <img src="assets/imgs/RankingNum.png" alt=""> -->
+        </div>
+      </div>
+      <div class="shopDataTab">
+        <div>
+          <p>{{(averageAmount/10000)|number:'1.2-2'}}</p>
+          <p>平均销售额</p>
+          <p>(万元)</p>
+        </div>
+        <div>
+          <p>{{(userAmount/10000)|number:'1.2-2'}}</p>
+          <p>门店销售额</p>
+          <p>(万元)</p>
+        </div>
+        <div>
+          <p>{{(medianAmount/10000)|number:'1.2-2'}}</p>
+          <p>中位数销售额</p>
+          <p>(万元)</p>
+        </div>
+      </div>
+      <div class="interval"></div>
+      <div class="ProgressContainer">
+        <div class="stuggle">打败{{percentage}}的门店</div>
+        <div class="progress">
+          <div class="progress-bar" 
+          role="progressbar" 
+          aria-valuenow="80" 
+          aria-valuemin="0" 
+          aria-valuemax="100" 
+          [ngStyle]="{'background':'#ed4247','width':percentage}">
+          </div>
+        </div>
+        <div class="Ranking">
+          <span>与上一名相差:{{(distanceLast/10000)|number:'1.2-2'}}</span>
+          <span>与第一名相差:{{(distanceFirst/10000)|number:'1.2-2'}}</span>
+        </div>
+      </div>
+      <div class="interval"></div>
+    </div>
+    <div class="newMember">
+      <div class="mboxImg">
+
+      </div>
+      <div class="box">
+        <div class="img">
+            {{memshopperRanking}}
+          <!-- <img src="assets/imgs/RankingNum.png" alt=""> -->
+        </div>
+      </div>
+      <div class="shopDataTab">
+          <div>
+              <p>{{memaverageAmount }}</p>
+              <p>平均新会员数</p>
+              <p>(人)</p>
+            </div>
+            <div>
+              <p>{{memuserAmount}}</p>
+              <p>门店新会员数</p>
+              <p>(人)</p>
+            </div>
+            <div>
+              <p>{{memmedianAmount}}</p>
+              <p>中位数新会员数</p>
+              <p>(人)</p>
+            </div>
+      </div>
+      <div class="interval"></div>
+      <div class="ProgressContainer">
+          <div class="stuggle">打败{{mempercentage}}的门店</div>
+          <div class="progress">
+            <div class="progress-bar" 
+            role="progressbar" 
+            aria-valuenow="80" 
+            aria-valuemin="0" 
+            aria-valuemax="100" 
+            [ngStyle]="{'background':'#ed4247','width':mempercentage}">
+            </div>
+          </div>
+          <div class="Ranking">
+            <span>与上一名相差:{{memdistanceLast}}</span>
+            <span>与第一名相差:{{memdistanceFirst}}</span>
+          </div>
+        </div>
+      <div class="interval"></div>
+    </div>
+  </div>
+  <!-- type1 -->
+  <div *ngIf='type==1'>
+      
+   
+    <div class="shopListRepeat" *ngFor='let item of data'>
+      <span>
+        <div>
+          <img src="./assets/imgs/Ranking{{item.sort}}.png" 
+          alt="" *ngIf='item.sort==1?true:false||item.sort==2?true:false||item.sort==3?true:false'>
+          <div *ngIf='!(item.sort==1?true:false||item.sort==2?true:false||item.sort==3?true:false)'>{{item.sort}}</div>
+        </div>
+        <div>{{item.storName}}</div>
+      </span>
+      <span>{{(item.amountC/10000)|number:'1.2-2'}}</span>
+      <span>{{(item.amountB/10000)|number:'1.2-2'}}</span>
+      <span>{{(item.amountA/10000)|number:'1.2-2'}}</span>
+    </div>
+
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf='refresh'>
+    <ion-infinite-scroll-content loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

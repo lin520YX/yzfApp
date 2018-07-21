@@ -1,0 +1,115 @@
+<!--
+  Generated template for the SaleInputPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>下单成功</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  >
+<div *ngIf='data'>
+    <div class="orderSucInfo">
+        <span>门店名称</span><span>{{data.storeName}}</span>
+      </div>
+      <div class="orderSucInfo">
+        <span>订单编号</span><span>{{data.receiptNo}}</span>
+      </div>
+      <div class="orderSucInfo">
+          <span>下单时间</span><span>{{data.posTime}}</span>
+      </div>
+      <div class="orderSucInfo">
+          <span>会员手机</span><span>{{data.phone}}</span>
+      </div>
+      <components-colorbar style="background:#fff"></components-colorbar>
+      <ion-list style=" margin-top: 10px;">
+          <ion-list-header style='background:#fff'>
+             商品
+          </ion-list-header>
+          <ion-list-header style='background:#f5f4f3'>
+             <div class="foodtitle">
+               <div>商品名称</div>
+               <div>数量</div>
+               <div>金额</div>
+             </div>
+           </ion-list-header>
+          <ion-item *ngFor='let item of data.goods'>
+                <div class="itemtitle">
+                    <div class="item1">
+                        <p>{{item.goodsName}}</p>
+                        <p>{{item.goodsNo}}</p>
+                    </div>
+                    <div class="item2" *ngIf='item.type==1'>
+                        {{item.num}}g
+                    </div>
+                    <div class="item2"*ngIf='item.type==0'>
+                        {{item.num}}
+                    </div>
+                    <div class="item3">¥{{item.totalPrice|number:'1.2-2'}}</div>
+                  </div>
+             
+            </ion-item>
+        </ion-list>
+
+        <ion-list style=" margin-top: 20px;" *ngIf='data.gifts.length<1?false:true'>
+          <ion-list-header style='background:#fff'>
+             赠品
+          </ion-list-header>
+          <ion-list-header style='background:#f5f4f3'>
+             <div class="foodtitle">
+               <div>赠品名称</div>
+               <div>数量</div>
+               <div>金额</div>
+             </div>
+           </ion-list-header>
+          <ion-item *ngFor='let item of data.gifts'>
+                <div class="itemtitle">
+                    <div class="item1">
+                        <p>{{item.goodsName}}</p>
+                        <p>{{item.goodsNo}}</p>
+                    </div>
+                    <div class="item2" *ngIf='item.type==1'>
+                        {{item.num}}g
+                    </div>
+                    <div class="item2"*ngIf='item.type==0'>
+                        {{item.num}}
+                    </div>
+                    <div class="item3">¥{{item.totalPrice|number:'1.2-2'}}</div>
+                  </div>
+             
+            </ion-item>
+        </ion-list>
+          <div class="orderSucInfoTwo">
+            <span>实付金额</span><span>¥{{saleAmount|number:'1.2-2'}}</span>
+          </div>
+          <div class="orderSucInfoTwo" *ngFor='let acc of data.actMap'>
+              <span>{{acc.actName}}</span>
+          </div>
+          <div class="orderSucInfoTwo">
+            <span>消费积分</span><span>+{{data.accAddBuy}}分</span>
+          </div>
+          <div class="orderSucInfoTwo" *ngIf='data.accAddGrade != 0'>
+              <span>会员加速</span><span>+{{data.accAddGrade}}分</span>
+            </div>
+          <div class="orderSucInfoTwo">
+            <span>双倍积分</span><span>+{{data.doubleIntegral}}分</span>
+          </div>
+          <div class="orderSucInfoTwo">
+            <span>可用积分</span><span>{{data.accNow}}分</span>
+          </div>
+</div>
+</ion-content>
+<ion-footer>
+  <div class="select">
+    <div class="caculator"(tap)='perfectInfo()' >
+      完善信息
+    </div>
+    <div class="verify">
+      <div (tap)='saleBack()'>
+        确定
+      </div>
+    </div>
+  </div>
+</ion-footer>

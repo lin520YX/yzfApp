@@ -1,0 +1,36 @@
+<!--
+  Generated template for the MonthlyTaskDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>销售额</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="monthTab">
+      <span>{{monthTitle}}</span>
+    </div>
+    <div class="monthTableThead">
+      <div class="tableT_one">区域</div>
+      <div class="tableT_two">目标</div>
+      <div class="tableT_two">实际</div>
+      <div class="tableT_two">达成率</div>
+    </div>
+    <div class="monthTableTheadTwo" >
+      <div class="tableT_one">{{totalmap.name}}</div>
+      <div class="tableT_two">{{totalmap.taskNum|number:'1.2-2'}}</div>
+      <div class="tableT_two">{{totalmap.accomlishNum}}</div>
+      <div class="tableT_two" >{{totalmap.taskNum==0?'-':((totalmap.accomlishNum*100/totalmap.taskNum)||0|number:'1.2-2')+'%'}}</div>
+    </div>
+    <div class="monthTableTheadTwo" *ngFor='let ite of listMap'>
+      <div class="tableT_one">{{ite.name}}</div>
+      <div class="tableT_two">{{ite.taskNum}}</div>
+      <div class="tableT_two">{{ite.accomlishNum}}</div>
+      <div class="tableT_two">
+        {{ite.taskNum==0?'-':((ite.accomlishNum*100/ite.taskNum)|number:'1.2-2')+'%'}}
+      </div>
+    </div>
+</ion-content>

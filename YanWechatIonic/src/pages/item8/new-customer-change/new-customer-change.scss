@@ -1,0 +1,320 @@
+page-new-customer-change {
+    .content{
+        background:#f6f6f6 !important;
+    }
+    .list{
+        padding-top:10px;
+    }
+ .newCustomerTab{
+     border-bottom:  1px solid #ccc;
+     padding: none !important;
+     background: #fff !important;
+   
+     .segment-ios .segment-button{
+        color: #000 !important;
+        border:none !important;
+        border-bottom: 1px solid #ccc;
+        font-size: 1.6rem !important;
+     }
+     .segment-md .segment-button{
+         border: 1px solid #ccc;
+         border:none !important;
+     }
+     .segment-ios .segment-button.segment-activated {
+        color: #fff;
+         background-color: #fff !important; 
+        
+         border-bottom-color: #D6000E !important;
+         color: #D6000E!important;
+        opacity: 1;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+    }
+     .segment-ios .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 4.2rem !important;
+        border-width: 1px;
+        border-style: solid;
+        border-bottom-color: #D6000E;
+        font-size: 1.6rem !important;
+        line-height: 4.2rem !important;
+        color: #D6000E;
+        background-color: transparent;
+    }
+     .segment-ios .segment-button:last-of-type{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0;
+        margin-left: 0;
+        border-left-width: 0;
+    }
+    .segment-ios .segment-button:first-of-type {
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0px!important;
+        margin-right: 0;
+    }
+    .segment-ios .segment-button.segment-activated {
+        color: #fff;
+        background-color: #D6000E;
+        opacity: 1;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        border-bottom: 2px solid #D6000E!important;
+    }
+     .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: #D6000E;
+        opacity: 1;
+        background:  #D6000E;
+        color: #fff;
+    }
+ }
+
+ .newCustomerChangeContainer{
+     font-size: 1.5rem;
+     margin: 0 10px;
+     background: #fff;
+     border-radius: 10px;
+     margin-bottom: 10px;
+    
+     .row_two{
+         height: 6rem;
+         display: flex;
+         margin: 0 10px;
+         border-bottom: 1px solid rgba(229,229,229,.7);
+         align-items: center;
+            .rowleft{
+                flex: 1;
+                height: 4rem;
+                padding: 0;
+                font-size: 1.4rem;
+                div:first-child{
+                    color: #333;
+                    height: 2rem;
+                    line-height: 2rem;
+                    ion-icon{
+                        color: #11af50;
+                        font-size: 2rem;
+                    }
+                }
+                div:last-child{
+                    color: #888;
+                    height: 2rem;
+                    height: 2rem;
+                    line-height: 2rem;
+                }
+            }
+            .rowRight{
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;  
+                div:first-child{
+                    width: 3rem;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    font-size: 2rem;
+                    border-radius: 50%;
+                    background: rgba($color: #11af50, $alpha: 1.0);
+                    margin-right:20px;
+                }  
+                div:last-child{
+                    width: 3rem;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    font-size: 2rem;
+                    border-radius: 50%;
+                    background: rgba($color: #ffac08, $alpha: 1.0)
+                } 
+            }
+     }
+     .row_three{
+        display: flex;
+        justify-content: center;
+        height: 3rem;
+        align-items: center;
+        margin: 0 10px;
+        font-size: 1.2rem;
+        color: #aaa;
+       >div:first-child{
+         width: 60%;
+         
+       }
+       >div:last-child{
+           flex: 1;
+           text-align: right;
+       }
+    }
+    .row_four{
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        height: 4rem;
+        .row_four_div{
+            height: 4rem;
+            width: 100%;
+            color: #fff;
+            background: #d8d8d8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p{
+                margin: 0;
+            }
+            
+        }
+        .row_four_store{
+            height: 4rem;
+            width: 100%;
+            color: #fff;
+            background: #d8d8d8;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p{
+                margin: 0;
+            }
+        }
+        .fourBorder{
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .fourActive{
+            border-radius: none !important;
+        }
+    }
+    .row-five{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 3rem;
+        padding: 0 10px;
+        margin: 10px 0;
+        overflow: hidden;
+        .ReturnResult{
+            width:4rem;
+            font-size: 1.2rem;
+        }
+        >div{
+            flex: 1;
+            height: 3rem;
+            line-height: 3rem;
+            display: flex;
+            font-size: 1.2rem;
+            &:last-child{
+                justify-content: flex-end;
+            }
+            .resultSelect{
+                flex: 1;
+                height: 3rem;
+                line-height: 3rem;
+                .input-wrapper{
+                    height: 3rem;
+                    line-height: 3rem;
+                }
+                ion-select{
+                    border: 1px solid rgba(229,229,229, $alpha: 1.0) !important;
+                    height: 3rem;
+                    line-height: 3rem;
+                }
+                .select-md{
+                    padding: 0 !important;
+                }
+                .select-ios{
+                    padding: 0 !important;
+                }
+                .select-md .select-icon {
+                    position: relative;
+                    width: 22px;
+                    height: 34px;
+                }
+                .select-ios .select-icon{
+                    position: relative;
+                    width: 22px;
+                    height: 34px;
+                }
+            }
+            .span{
+                font-size: 1.2rem;
+                width: 35%;
+                height: 3rem;
+                color: #000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                border: 1px solid rgba(229,229,229, $alpha: 1.0);
+                div{
+                    flex: 1;
+                    font-size: 1.2rem;
+                }
+                ion-icon{
+                    width: 10px;
+                }
+            }
+            .select-text{
+                color: #000 !important;
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+    .row-six{
+        display: flex;
+        .VisitContentTitle{
+            padding-left: 10px;
+            width: 6rem;
+            padding-top:5px;
+            font-size: 1.2rem;
+            display: inline-block!important;
+        }
+        .row-six-select{
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            div{
+                font-size: 1.2rem;
+                width: 6rem;
+                text-align: center;
+                height: 3rem;
+                line-height: 3rem;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                margin: 3px;
+            }
+            .active{
+                border: 1px solid rgba($color: #e9120a, $alpha: .7) !important;
+                color:#D6000E; 
+            }
+        }
+    }
+    .colorRed{
+        background: #D6000E !important; 
+    }
+ }
+ textarea{
+     border: 1px solid rgba(189, 186, 186, 0.7) !important;
+     border-radius: 10px;
+     height: 6rem;
+
+ }
+ .item-ios.item-block .item-inner {
+    padding-right: 8px;
+    padding-right: 8px;
+    border-bottom: none !important;
+}
+}

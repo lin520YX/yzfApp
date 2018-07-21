@@ -1,0 +1,111 @@
+page-member-main {
+    .content{
+        background:#ffffff !important;
+    }
+    .memberMainHeader{
+        display: flex;
+        height: 10rem;
+        align-items: flex-end;
+        justify-content: center;
+        .memberD{
+            margin-left: 3rem;
+            margin-right: 1rem;
+            width: 9rem;
+            height: 9rem;
+            background: url(../assets/imgs/memberdesign.png);
+            background-size: 9rem 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5rem;
+            div{
+                color: #fff;
+            }
+        }
+        img{
+            width: 7.7rem;
+            height: 7.3rem;
+        }
+        .memberInfo{
+            flex:1;
+            color: rgb(99, 97, 97);
+            font-size: 16px;
+            b{
+                font-size: 16px;
+                color: #666;
+                font-weight: 350;
+            }
+            p:nth-child(2){
+                color: rgb(99, 97, 97);
+                span:last-child{
+                    color: #52ace5;
+                    font-weight: 400;
+                    margin-left: 16px;
+                }
+            }
+        }
+        
+    }
+    .InfoMore{
+        padding-right: 20px;
+        color: rgb(99, 97, 97);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 4rem;
+        border-bottom: 0.55px solid rgba(30,30,30,.3);
+        font-size: 16px;
+        span:first-child{
+           margin-right: 10px;
+        }
+    }
+    .member9{
+        height: 15px;
+        background:#f6f6f6; 
+        border-top:0.45px solid rgba(150,150,150, 0.3);
+        border-bottom:0.55px solid rgba(150,150,150, 0.3);
+    }
+    .memberMarkList{
+        display: flex;
+        height: 6rem;
+        align-items: center;
+        div:nth-child(2){
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+        div{
+
+            p{
+                margin:0;
+            }
+            p:first-child{
+                color: #999;
+                font-size: 1rem;
+            }
+            p:last-child{
+                color: #000;
+                font-size: 2rem;
+                font-weight: 300;
+            }
+            flex: 1;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+    .menu-button {
+        height: 7rem;
+        width: 100%;
+        div {
+          text-align: center;
+          color: #666666;
+          font-size: 13px;
+          img {
+            width: 3.8rem;
+            height: 3.8rem;
+          }
+        }
+      }
+}

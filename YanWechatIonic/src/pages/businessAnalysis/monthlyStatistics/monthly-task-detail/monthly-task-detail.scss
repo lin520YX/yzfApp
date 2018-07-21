@@ -1,0 +1,120 @@
+page-monthly-task-detail {
+    .content {
+        background: #fff !important;
+      }
+    //   .stateDisplay{
+    //     display: flex;
+    // height: 6rem;
+    // align-items: center;
+    // div:nth-child(2){
+    //     border-left: .55px solid #ccc;
+    // }
+    // div{
+
+    //     p{
+    //         margin:0;
+    //     }
+    //     p:first-child{
+    //         color: #000;
+    //         font-size: 1.8rem;
+    //         font-weight: 300;
+           
+    //     }
+    //     p:last-child{
+    //         color: #444;
+    //         font-weight: 350;
+    //         font-size: 2.4rem;
+    //     }
+    //     flex: 1;
+    //     height: 4rem;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     flex-direction: column;
+    // }
+    // }
+    // .monthlyblack{
+    //     height: 1.4rem;
+    //     width: 100%;
+    //     background: rgba(230, 227, 227,.5);
+    // }
+    // .contentList{
+    //     height: 4rem;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+        
+    //     div{
+    //         flex: 1;
+    //         text-align: center;
+    //         font-size: 18px;
+    //         font-weight: 300;
+    //     }
+    // }
+    // .contentListli{
+    //     height: 4rem;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     border-bottom: .55px solid rgba(229, 229, 229,.8);
+
+    //     div{
+    //         flex: 1;
+    //         text-align: center;
+    //         font-size: 18px;
+    //     }
+    // }
+    .monthTab{
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(165, 162, 162);
+        font-size: 1.5rem;
+        border-bottom: .55px solid rgba(229, 229, 229, .5);
+    }
+    .monthTableThead{
+        display: flex;
+        height: 3rem;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        background: rgb(236, 234, 234);
+        color: rgb(121, 119, 119);
+        border-bottom: .55px solid rgba(229, 229, 229, .5);
+        .tableT_one{
+            width: 10rem;
+            padding-left: 10px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .tableT_two{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .monthTableTheadTwo{
+        display: flex;
+        height: 5rem;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        color: rgb(121, 119, 119);
+        border-bottom: .55px solid rgba(229, 229, 229, .5);
+
+        .tableT_one{
+            width: 10rem;
+            padding-left: 10px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .tableT_two{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

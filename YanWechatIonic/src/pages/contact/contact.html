@@ -1,0 +1,34 @@
+<ion-content class="myCenter">
+  <div class="Locating">
+    <div class="meLocation" (tap)='showRadio()'>
+        <ion-icon name="swap"></ion-icon>&nbsp;{{storeName}}&nbsp;
+     </div>
+     <div class="meLocationt" >
+        <ion-icon name="ios-compass" (tap)='Locating()'></ion-icon>
+     </div>
+  </div>
+    <div class="photo">
+        <img [defaultImage]='defaultImage' [lazyLoad]='qrUrl'  [offset]='offset' #myImage (tap)='imgPress(myImage)' (press)="pressEvent(myImage)">
+    </div>
+    <div class='userName'>{{userName}}<br><p style="font-size: 15px">{{phone}}</p></div>
+    <ion-item class="meList" (tap)='modifyPsw()'>
+        <div class="list-item-left" >
+            <img src="./assets/imgs/meAbout@2x.png" alt=""><h2>修改密码</h2>
+        </div>
+        <div class="list-item-right">
+          <ion-icon name="ios-arrow-forward" color="gentle"></ion-icon>
+        </div>
+    </ion-item>  
+    <ion-item class="meList" (tap)='close()'>
+        <div class="list-item-left">
+            <img src="./assets/imgs/uncord.png" alt="" ><h2>解除绑定</h2>
+        </div>
+        <div class="list-item-right">
+          <ion-icon name="ios-arrow-forward" color="gentle"></ion-icon>
+        </div>
+    </ion-item>  
+    <!-- <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map> -->
+    <button ion-button color='light' (tap)='logout()' >退出登录</button>
+  </ion-content>

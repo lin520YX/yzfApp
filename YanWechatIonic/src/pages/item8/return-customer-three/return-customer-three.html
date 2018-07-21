@@ -1,0 +1,183 @@
+<!--
+  Generated template for the ReturnCustomerThreePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>会员详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="memberMainHeader">
+    <div class="memberD">
+      <div>{{vipTypeName}}</div>
+    </div>
+    <div class="memberInfo">
+      <p>
+        <span>手机：
+          <b>{{phone}}</b>
+        </span>
+        <span *ngIf='weixin'>
+          <ion-icon name="weixin" class="weixin"></ion-icon>
+        </span>
+        <span class="R_phone_tap" *ngIf='phone' (tap)='callPhone()'>
+          <ion-icon ios="ios-call" md="ios-call" class="call-phone"></ion-icon>
+        </span>
+      </p>
+      <p>
+        <span>姓名：
+          <b>{{name}}</b>
+        </span>
+        <span>
+          <ion-icon name="male" *ngIf='sex=="男"'></ion-icon>
+          <ion-icon name="female" *ngIf='sex=="女"'></ion-icon>
+        </span>
+      </p>
+      <p>
+        <span>年龄：
+          <b>{{age}}</b>
+        </span>
+      </p>
+    </div>
+  </div>
+  <div class='InfoMore'>
+
+  </div>
+  <div class="member9"></div>
+  <ion-row>
+    <ion-col col-4>
+      <button ion-button clear class="menu-button" (tap)='ConsumptionRecord()'>
+        <div>
+          <img src="./assets/imgs/home_m1.png">
+          <p>消费记录</p>
+        </div>
+      </button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button clear class="menu-button" (tap)='MarkExchange()'>
+        <div>
+          <img src="./assets/imgs/home_m2.png">
+          <p>积分记录</p>
+        </div>
+      </button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button clear class="menu-button" (tap)='ExchangeRecord()'>
+        <div>
+          <img src="./assets/imgs/home_m3.png">
+          <p>兑换记录</p>
+        </div>
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-4>
+      <button ion-button clear class="menu-button" (tap)='trackingRecord()'>
+        <div>
+          <img src="./assets/imgs/memberVisit@2x.png">
+          <p>跟踪记录</p>
+        </div>
+      </button>
+    </ion-col>
+  </ion-row>
+  <!-- 回访录入 -->
+  <div *ngIf='RecordIf'>
+    <div class="newCustomerChangeContainer" *ngFor='let item of RecordData;let index=index'>
+      <div class="row_two">
+        <div class="rowleft">
+          <div>{{item.memberName}}&nbsp;{{item.memberPhone}}
+            <ion-icon *ngIf='item.weixin==1?true:false' name='weixin'></ion-icon>
+          </div>
+          <div>{{item.projectName}}</div>
+        </div>
+        <div class="rowRight">
+          <div (tap)='callPhone(item.memberPhone)'>
+            <ion-icon ios="ios-call" md="ios-call"></ion-icon>
+          </div>
+          <div (tap)='returnCustomerThree(1,item.memberId,item)'>
+            <ion-icon ios="ios-list-box" md="ios-list-box"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="row_three">
+        <div>最近回访：{{item.oldDate?.time|date:'yyyy.MM.dd'}}{{item.oldName}}</div>
+        <div>
+            {{item.endDate?.time|date:'yyyy.MM.dd'}}名单到期
+        </div>
+      </div>
+      <div class="row_four ">
+        <div (tap)='scaling(index,item.visitId)' class="row_four_div {{('show'+item.visitId)==temp?'fourActive':'fourBorder'}}">
+          <p>回访录入</p>
+          <p>
+            <ion-icon name="{{('show'+item.visitId)==temp?'ios-arrow-up-outline':'ios-arrow-down-outline'}}"></ion-icon>
+          </p>
+        </div>
+      </div>
+      <div *ngIf="temp=='show'+item.visitId">
+        <div class="row-five">
+          <div>
+            <div>回访结果</div>
+            <div class="resultSelect">
+              <ion-item mode='ios'>
+                <ion-select [(ngModel)]="storeSelected" okText="确定" cancelText="取消" style="color: #fff;font-size: 1.5rem;">
+                  <ion-option value="">请选择</ion-option>
+                  <ion-option *ngFor='let it of item.returnResult' value="{{it.id}}">{{it.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </div>
+          <div>
+            <div>回访状态</div>
+            <div class="resultSelect">
+              <ion-item mode='ios'>
+                <ion-select [(ngModel)]="noReturnStatus" okText="确定" cancelText="取消" style="color: #fff;font-size: 1.5rem;">
+                  <ion-option *ngFor='let ir of item.returnRstatus' value="{{ir.status}}">{{ir.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </div>
+        </div>
+        <div class="row-six">
+          <div class="VisitContentTitle">回访内容</div>
+          <div class="row-six-select">
+            <div *ngFor='let ite of item.returnContent;' (tap)='contentTap(item.visitId,ite.name)' class="{{ite.checked=='false'?'':'active'}}">{{ite.name}}</div>
+          </div>
+
+        </div>
+        <div>
+          <ion-item mode='ios'>
+            <ion-label>备注</ion-label>
+            <ion-textarea [(ngModel)]='memo'>
+
+            </ion-textarea>
+          </ion-item>
+        </div>
+        <div class="row_four ">
+          <div class="colorRed row_four_store" (tap)='secondStore(item.projectId,item.visitId,item.memberId,index)'>保存
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ReturnCustomer_blank" *ngIf='saleDateMore'></div>
+  <div class="saleRecord" *ngIf='saleDateMore'>
+    <div class="rowTitle">
+      <div>最近消费</div>
+      <div  (tap)='ConsumptionRecord()'>查看更多></div>
+    </div>
+    <div class="rowContent">
+      <div class="row_date_money">
+        <div class="saleDate">{{tradeDate}}</div>
+        <div class="saleMoney">¥{{totalAmount}}</div>
+      </div>
+      <div class="sale_row" *ngFor='let item of saleData'>
+        <div class="foodName">{{item.goodsName}}</div>
+        <div class="ss_qulify">¥{{item.salePrice}}</div>
+        <div class="ss_qulify">x{{item.saleQty}}</div>
+      </div>
+    </div>
+    <div class="r_blank"></div>
+  </div>
+</ion-content>

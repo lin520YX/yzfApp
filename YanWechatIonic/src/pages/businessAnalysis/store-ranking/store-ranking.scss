@@ -1,0 +1,248 @@
+page-store-ranking {
+    .content {
+        background: rgb(255, 255, 255) !important;
+      }
+      .saleNum,.newMember{
+          display: flex;
+          flex-direction: column;
+        .boxImg{
+                width: 100%;
+                height: 6rem;
+                background: url('../assets/imgs/saleNum.png')no-repeat;
+                background-size: 100% 100%;
+            }
+        .mboxImg{
+            width: 100%;
+            height: 6rem;
+            background: url('../assets/imgs/newmemberNum.png')no-repeat;
+            background-size: 100% 100%;
+        }
+            .box{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 14rem;
+                background: #fff;
+                
+                .img{
+                    width: 9.7rem;
+                    height: 11.52rem; 
+                    line-height: 12.92rem;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 3rem;
+                    background: url('../assets/imgs/RankingNum.png')no-repeat;   
+
+                    background-size: 9.7rem 11.52rem; 
+                }
+            }
+            .shopDataTab{
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 6rem;
+                div{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    height: 5rem;
+                    &:nth-child(2){
+
+                        border-right: 1px solid rgba(229, 229, 229,.7);
+                        border-left: 1px solid rgba(229, 229, 229,.7);
+
+                    }
+                    p{
+                        width: 100%;
+                      margin: 0;
+                     
+                      &:first-child{
+                          font-size: 2.16rem;
+                          height: 2.16rem;
+                          line-height: 2.16rem;
+                          font-weight: 300;
+                      }
+                      &:nth-child(2){
+                          margin: .5rem 0;
+                      }
+                      &:nth-child(2),&:last-child{
+                        height: 1.2rem;
+                        line-height:1.2rem;
+                          font-size: 1.2rem;
+                          color: #7c776d;
+                      }
+                    }
+                }
+            }
+            .interval{
+                height: 1rem;
+                display: flex;
+                background: rgba(229, 229, 229, .7);
+            }
+            .ProgressContainer{
+               background:  rgb(255, 255, 255);
+                .stuggle{
+                    height: 3.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #666;
+                    font-size: 1.6rem;
+                }
+                padding: 0 2rem;
+                .progress {
+                    background-color: #ccc;
+                    box-shadow: 0 .01rem .02rem rgba(0, 0, 0, 0.1) inset;
+                    height: 2rem;
+                    margin-top: 1rem;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                  }
+                  .progress-bar {
+                    background-color: #D6000E;
+                    box-shadow: 0 -0.01rem 0 rgba(0, 0, 0, 0.15) inset;
+                    color: #fff;
+                    float: left;
+                    font-size: 14px;
+                    height: 100%;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    border-radius: 1rem;
+                    transition: width 0.6s ease 0s;
+                    width: 0;
+                  }
+                  .progress-bar.finish{
+                    background-color: gray;
+                  }
+                .Ranking{
+                    height: 4rem;
+                    align-items: center;
+                    display: flex;
+                    font-size: 1.4rem;
+                    color: #666;
+                    justify-content: space-between;
+                }
+            }
+      }
+      .select-ios {
+        padding: 5px 8px 5px 16px;
+    }
+      .select-md .select-icon .select-icon-inner {
+        color: #fff;
+      }
+      .select-ios .select-icon .select-icon-inner {
+        color: #fff;
+      }
+    .shopperSubheader{
+        display: flex;
+        height: 4rem;
+        align-items: center;
+        font-size: 1.4rem;
+        color: #666;
+        background: rgb(235, 233, 233);
+        border-bottom: 1px solid rgba(240, 240, 240, 0.7);
+        span{
+           &:nth-child(2),&:nth-child(3),&:last-child{
+            flex: 1;
+            text-align: center;
+           }
+            p{
+                margin: 0;
+            }
+            &:first-child{
+                display: flex;
+                width: 40%;
+                div{
+                    &:first-child{
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &:last-child{
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }  
+    .shopList{
+        display: flex;
+        height: 4rem;
+        align-items: center;
+        font-size: 1.4rem;
+        color: #666;
+        border-bottom: 1px solid rgba(229, 229, 229, .7);
+        span{
+            &:nth-child(2),&:nth-child(3),&:last-child{
+                flex: 1;
+                text-align: center;
+               }
+            p{
+                margin: 0;
+            }
+            &:first-child{
+                display: flex;
+                width: 40%;
+                div{
+                  
+                    &:first-child{
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &:last-child{
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    } 
+    .shopListRepeat{
+        display: flex;
+        min-height: 4rem;
+        align-items: center;
+        font-size: 1.4rem;
+        color: #666;
+        border-bottom: 1px solid rgba(229, 229, 229, .7);
+        span{
+            &:nth-child(2),&:nth-child(3),&:last-child{
+                flex: 1;
+                text-align: center;
+               }
+            p{
+                margin: 0;
+            }
+            &:first-child{
+                display: flex;
+                width: 40%;
+               
+                div{
+                    
+                  
+                       
+                        &:first-child{
+                            width: 30%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        img{
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                        &:last-child{
+                            flex: 1;
+                        }
+                    
+                }
+            }
+           
+        }
+    } 
+}

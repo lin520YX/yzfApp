@@ -1,0 +1,169 @@
+page-sales-statement-detail {
+    .content {
+        background: #f5f4f3 !important;
+      }
+      .stateMentOnePart{
+        background: #fff;
+        .statusSelect{
+            margin: 0 10px;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.55px solid rgba(229,229,229,.8);
+            div{
+                flex: 1;
+                font-size: 1.6rem;
+                color: #444;
+                &:nth-child(2){
+                    text-align: right;
+                    span{
+                        display: inline-block;
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        line-height: 2.5rem;
+                        border-radius: 50%;
+                        border: .55px solid #ccc;
+                        text-align: center;
+                        color: #ccc;
+                       margin: 0 5px;
+                    }
+                    .active{
+                        background: #ed4247;
+                        color: #f5f4f3;
+                        border:none;
+                    }
+
+                }
+            }
+
+        }
+        .stateDisplay{
+        display: flex;
+        height: 6rem;
+        align-items: center;
+        .saleC{
+            color: #eb4247 !important;
+        }
+        .saleG{
+            color: #1ba83f !important;
+        }
+        div:nth-child(2){
+            border-right: .55px solid #ccc;
+            border-left: .55px solid #ccc;
+        }
+        div{
+            
+            p{
+                margin:0;
+            }
+            p:first-child{
+                color: #999;
+                font-size: 2rem;
+            }
+            p:last-child{
+                color: #000;
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+            flex: 1;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        }
+        .state{
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: .8rem;
+            background: #eee;
+            color: #999;
+   
+        }
+        .echartPosition{
+            height: 210px;
+            position: relative;
+            .MyTrend{
+                position: absolute;
+                top:0;
+                height: 3rem;
+              display: flex;
+              align-items: center;
+              padding-left: 1rem;
+              color: #999;
+              font-size: 1.5rem;
+            }
+        } 
+    }
+    .stateMentTwoPart{
+        margin-top: 10px;
+        background: #fff;
+        font-size: 1.4rem;
+        .stateMentTwoTitle{
+            margin:0 10px;
+            height: 3.5rem;
+            
+            color: #444;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.55px solid rgba(229,229,229,.8);
+        }
+        .stateList{
+            display: flex;
+            height: 3.5rem;
+            align-items: center;
+            color: #444;
+            padding: 0 .5rem;
+            div:nth-child(1){
+              width: 100px;
+                text-align: center;
+            }
+            div:nth-child(3){
+                text-align: center;
+                width: 85px;
+                
+            }
+            div:nth-child(2){
+                flex: 1;
+                padding-left: 5px;
+              
+            }
+        }
+        .stateLi{
+            padding: 0 .5rem;
+            background: #fff;
+            min-height: 10rem;
+            overflow-x: auto;
+            ul,li{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                min-height: 2.5rem;
+                color: #666;
+            }
+            ul{
+                width: 100%;
+                display: flex;
+                
+                li:first-child{
+                    width: 100px;
+                    text-align: center;
+                }
+                li:nth-child(2){
+                    flex: 1;
+                   
+                    white-space:wrap;
+                }
+                li:nth-child(3){
+                    text-align: center;
+                    width: 85px
+                }
+            }
+        }
+    }
+    
+
+}   

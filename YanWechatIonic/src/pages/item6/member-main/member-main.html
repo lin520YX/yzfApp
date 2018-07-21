@@ -1,0 +1,93 @@
+<!--
+  Generated template for the MemberMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>会员主页</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+      <div class="memberMainHeader">
+          <div class="memberD">
+            <div>{{vipTypeName}}</div>
+          </div>
+          <div class="memberInfo">
+            <p>
+              <span>手机：<b>{{phone}}</b></span>
+            </p>
+            <p>
+              <span>姓名：<b>{{name}}</b></span><span><ion-icon name="male" *ngIf='sex=="男"'></ion-icon><ion-icon name="female" *ngIf='sex=="女"'></ion-icon></span>
+            </p>
+            <p>
+              <span>年龄：<b>{{age}}</b></span>
+            </p>
+          </div>
+    </div>
+    <div class='InfoMore'>
+      <div (tap)='memberInfo()'>
+          <span>更多信息</span><span><ion-icon name='ios-arrow-forward-outline'></ion-icon></span>
+       </div>
+    </div>
+    <div class="member9"></div>
+    <div class="memberMarkList">
+      <div>
+        <p>累计积分</p>
+        <p>{{accNum}}</p>
+      </div>
+      <div>
+        <p>可用积分</p>
+        <p>{{nowAccNum}}</p>
+      </div>
+      <div>
+        <p>已用积分</p>
+        <p>{{decNum}}</p>
+      </div>
+    </div>
+    <div class="member9"></div>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='ConsumptionRecord()'>
+          <div>
+            <img src="./assets/imgs/saleRecord.png">
+            <p>消费记录</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='MarkExchange()'>
+          <div>
+            <img src="./assets/imgs/mark-echange.png">
+            <p>积分记录</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='ExchangeRecord()'>
+          <div>
+            <img src="./assets/imgs/echange-record.png">
+            <p>兑换记录</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='saleInputScan()'>
+          <div>
+            <img src="./assets/imgs/sale-record.png">
+            <p>销售录入</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='markExchange()'>
+          <div>
+            <img src="./assets/imgs/home_m2.png">
+            <p>积分兑换</p>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+  

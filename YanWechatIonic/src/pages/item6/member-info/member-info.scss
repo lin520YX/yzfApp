@@ -1,0 +1,151 @@
+page-member-info {
+    .content{
+        background:#ffffff !important;
+    }
+    .memberDesign{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14rem;
+        div{
+            img{
+                width: 7.7rem;
+                height: 7.3rem;
+            }
+            p{
+                color: #999;
+            }
+        }
+        .memberInfo_T_p{
+         position: relative;
+         .member_T{
+             position: absolute;
+             top:4.8rem;
+             left:1.5rem;
+             color: #fff;
+             font-size: 1.3rem;
+         }
+        }
+    }
+    .member9{
+        height: 15px;
+        background:#f6f6f6; 
+        border-top:0.55px solid rgba(150,150,150, 0.3);
+        border-bottom:0.55px solid rgba(150,150,150, 0.3);
+    }
+    .memberMarkList{
+        display: flex;
+        height: 5rem;
+        align-items: center;
+        div{
+            p{
+                margin:0;
+            }
+            p:first-child{
+                color: #999;
+                font-size: 1rem;
+            }
+            p:last-child{
+                color: #000;
+                font-size: 2rem;
+                font-weight: 300;
+            }
+            flex: 1;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+    .item-input ion-label {
+        -webkit-box-flex: initial;
+        -webkit-flex: initial;
+        -ms-flex: initial;
+        flex: initial;
+        max-width: 200px;
+        pointer-events: none;
+        width: 20%;
+    }
+  
+    .memberInfoList{
+        background: #fff;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        height: 4rem;
+        border-bottom: 0.55px solid rgba(102,102,102, 0.3);
+        color: #444;
+        font-size: 16px;
+        .span1{
+            width: 28%;
+            padding-left: 18px;
+        }
+        .span2{
+            flex: 1;
+            display: flex;
+            .item{
+               height: 3.7rem !important;
+            }
+            .item-ios{
+                height: 3.7rem !important;
+                padding: 0 !important;
+            }
+        }
+        .noModify{
+            color: #d8d8d8;
+        }
+        input{
+            flex: 1; 
+            border: none;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        textarea{
+            flex: 1;
+            height: 3.5rem;
+            line-height: 3.5rem;
+           border: none;
+           outline: none;
+           padding: 0;
+            margin: 0;
+        }
+        
+    }
+    .memberInfoListBirthday{
+        background: #fff;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        height: 4.5rem;
+        border-bottom: 0.55px solid rgba(102,102,102, 0.3);
+        color: #444;
+        font-size: 16px;
+        .span1{
+            width: 28%;
+            padding-left: 18px;
+        }
+        .span2{
+            flex: 1;
+            display: flex;
+            .item{
+               height: 3.7rem !important;
+            }
+            .item-ios{
+                height: 3.7rem !important;
+                padding: 0 !important;
+            }
+        }
+        .noModify{
+            color: #d8d8d8;
+        }
+       
+    }
+    .list-md .item-input:last-child {
+       border-bottom: 1px solid #fff !important;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color: #444!important;
+    }
+}

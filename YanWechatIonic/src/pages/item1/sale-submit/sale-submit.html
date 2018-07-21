@@ -1,0 +1,152 @@
+<!--
+  Generated template for the SaleSubmitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>订单确认</ion-title>
+  </ion-navbar>
+  <div class="salePhone" *ngIf='phoneScreen'>
+    <div>会员手机</div>
+    <input type="tel" placeholder="请输入手机号码" [(ngModel)]='phone' (ngModelChange)="toggleCheckIn($event)" >
+  </div>
+</ion-header>
+<ion-content>
+  <!-- 商品 -->
+ <div class="foodList">
+    <ion-list>
+        <ion-list-header>
+          商品
+        </ion-list-header>
+        <ion-list-header style='background:#f5f4f3'>
+          <div class="foodtitle">
+            <div>商品名称</div>
+            <div>单价</div>
+            <div>数量</div>
+            <div>金额</div>
+          </div>
+        </ion-list-header>
+        <div *ngFor='let ite of goods;let index=index'>
+          <ion-item-sliding #item>
+            <ion-item mode='ios'>
+              <div class="itemtitle">
+                <div class="item1">
+                  <p>{{ite.goodsName}}</p>
+                </div>
+                <div class="item3"> ¥{{ite.price|number:'1.2-2'}}</div>
+                <div class="item2">
+                  <div class="cart_num">
+                    <div class="input_c" *ngIf='ite.type==1'>
+                      <input type="number" [(ngModel)]='ite.num' name="num" id="num"  (keyup)='caculator(index,ite.num)'name="points" min="1" max="10"  />g
+                    </div>
+    
+                    <div class="input_left" *ngIf='ite.type==0' (tap)='reduce(index)'>
+                      <ion-icon name='minus'></ion-icon>
+                    </div>
+                    <div class="input_center" *ngIf='ite.type==0'>
+                      <input type="number" readonly="readonly" [(ngModel)]='ite.num' name="num" id="num" />
+                    </div>
+                    <div class="input_right" *ngIf='ite.type==0' (tap)='add(index)'>
+                      <ion-icon name="add"></ion-icon>
+                    </div>
+    
+                  </div>
+                </div>
+                <div class="shopTotal">
+                  <input class="item4" type="number" [(ngModel)]='ite.totalPrice'  (keyup)='totalCaculator(index,ite.totalPrice)'>
+                </div>
+              </div>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button (tap)='remove(index)'>
+                  <ion-icon name='ios-trash-outline'></ion-icon>
+                </button>
+              </ion-item-options>
+          </ion-item-sliding>
+        </div>
+      </ion-list>
+      <!-- 赠品 -->
+      <div></div>
+      <ion-list *ngIf='giftLength>=1?true:false'>
+        <ion-list-header>
+          赠品
+        </ion-list-header>
+        <ion-list-header style='background:#f5f4f3'>
+          <div class="foodtitle">
+            <div>赠品名称</div>
+            <div>单价</div>
+            <div>数量</div>
+            <div>金额</div>
+          </div>
+        </ion-list-header>
+        <div *ngFor='let ite of gift;let index=index'>
+          <ion-item>
+            <div class="itemtitle">
+              <div class="item1">
+                <p>{{ite.goodsName}}</p>
+              </div>
+              <div class="item3"> ¥{{ite.price|number:'1.2-2'}}</div>
+              <div class="item2">
+                <div class="cart_num">
+                  <div class="input_c" *ngIf='ite.type==1'>
+                    <span>{{ite.num}}g</span>
+                  </div>
+                  <div class="input_c" *ngIf='ite.type==0'>
+                    <span>{{ite.num}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item3"> 
+                {{ite.totalPrice|number:'1.2-2'}}
+              </div>
+            </div>
+          </ion-item>
+        </div>
+      </ion-list>
+ </div>
+ <ion-item no-lines style="color:#444;" mode='ios'>
+    <ion-label style=" text-align: center;
+      line-height: 63px;">
+          备注
+      </ion-label>
+      <ion-textarea style="background: #c8c7cc;" cols="5" rows="2" [(ngModel)]='memo'>
+        </ion-textarea>
+  </ion-item>
+  <div class='yactive' *ngIf='ActNameLength==0?false:true'>
+    <span>活动:
+      <div class="actnumber" *ngIf='ActNameLength>1'>{{ActNameLength}}</div>
+    </span>
+    <div *ngIf='ActNameLength==1'>
+      <span *ngFor='let name of activeMap'> {{name.actName}}</span>
+    </div>
+    <span *ngIf='ActNameLength>1' (tap)='sheet()'>{{ActName}}</span>
+
+  </div>
+  <div class="blankBottom">
+
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="select">
+    <div class="caculator" *ngIf='sumMap'>
+      <div>
+        实付金额：
+        <span>¥{{saleAmount|number:'1.2-2'}}</span>
+      </div>
+      <!-- <div> -->
+        <!-- <span>总额：¥{{saleAmount|number:'1.2-2'}}</span> -->
+        <!-- <span>立减：¥{{sumMap.disAmount|number:'1.2-2'}}</span> -->
+      <!-- </div> -->
+    </div>
+    <div class="verify">
+      <div (tap)='cancel()'>
+        取消
+      </div>
+      <div (tap)='orderSuc()'>
+        确认下单
+      </div>
+    </div>
+  </div>
+</ion-footer>

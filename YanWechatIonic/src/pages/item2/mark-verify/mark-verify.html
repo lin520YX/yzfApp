@@ -1,0 +1,67 @@
+<!--
+  Generated template for the MarkVerifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>兑换确认</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="salePhone">
+    <div>手机号</div>{{phone}}
+  </div>
+  <components-colorbar></components-colorbar>
+  <ion-list>
+    <ion-list-header>
+      礼品
+    </ion-list-header>
+    <ion-list-header style='background:#f5f4f3'>
+      <div class="foodtitle">
+        <div>商品名称</div>
+        <div>数量</div>
+      </div>
+    </ion-list-header>
+      <ion-item style="border: 0.5px solid #f6f6f6;" *ngFor="let item of goodsList;let i = index;">
+        <div class="itemtitle">
+          <div class="item1">
+            <p>{{item.name}}</p>
+            <p>兑换值: {{item.exchangeVal}}</p>
+          </div>
+          <div class="item2">
+            <div class="cart_num">
+              <div class="input_left" (tap)='onMius(i)'>
+                <ion-icon name='minus'></ion-icon>
+              </div>
+              <div class="input_center">
+                <input type="text" readonly="readonly" [(ngModel)]='item.number' name="num" id="num" />
+              </div>
+              <div class="input_right" (tap)='onAdd(i)'>
+                <ion-icon name="add"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div class="select">
+    <div class="caculator">
+      <div>
+        所需积分：<span>{{exchangeVals}}</span>
+      </div>
+      <div>
+        <span>可用积分：{{canUseMark}}</span>
+      </div>
+    </div>
+    <div class="verify">
+      <div (tap)='submit()'>
+        确认兑换
+      </div>
+    </div>
+  </div>
+</ion-footer>

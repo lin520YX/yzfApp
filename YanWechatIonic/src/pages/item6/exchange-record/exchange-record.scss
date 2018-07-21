@@ -1,0 +1,45 @@
+page-exchange-record {
+    .content{
+        background:#ffffff !important;
+    }
+    .exchangeContent{
+        margin-left: 1rem;
+        display: flex;
+        min-height: 5rem;
+        align-items: center;
+        padding-right: 10px;
+        justify-content: space-between;
+        border-bottom: .55px solid rgba(30,30,30,.3);
+        p{
+            margin: 0;
+            margin: .5rem 0;
+        }
+        div:first-child{
+            p:first-child{
+                font-size: 1.5rem;
+                color: #444;
+            }
+            p:nth-child(2){
+                color: #666;
+                font-size: 1.3rem;
+            }
+            p:last-child{
+                color: #777;
+                font-size: 1.2rem;
+            }
+        }    
+        div:last-child{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            p:first-child{
+                font-size: 1.2rem;
+                color: #999;
+            }
+            p:last-child{
+                color: #111;
+                font-size: 1.56rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="lvLogin">
+  <form #myForm='ngForm' (ngSubmit)='login(myForm.value)'>
+      <div class="loginLogo">
+        <img src="assets/imgs/hoyLogin_logo.png" alt="">
+      </div>
+    <ion-list class="loginForm">
+      <ion-item no-lines style="background:transparent!important;border-bottom:1px solid #ccc;" mode='md' >
+        <ion-label>
+          <ion-icon name="person"></ion-icon>
+        </ion-label>
+        <ion-input type="tel" ngModel name='phone' style="padding-right:none!important;" placeholder="输入手机号" clearInput></ion-input>
+      </ion-item>
+      <ion-item  no-lines  style="background:transparent!important;border-bottom:1px solid #ccc;" mode='md'>
+          <ion-label>
+            <ion-icon name="ios-lock-outline"></ion-icon>
+          </ion-label>
+          <ion-input type="password" ngModel name='password' placeholder="输入密码"></ion-input>
+      </ion-item>
+      <ion-item no-lines  style="background:transparent!important;border-bottom:1px solid #ccc;" *ngIf='!driverToken' mode='md' >
+          <ion-label>
+            <ion-icon name="ios-key-outline"></ion-icon>
+          </ion-label>
+          <ion-input type="tel" ngModel name='code' placeholder='验证码'></ion-input>
+          <span item-end ion-button style="height: 36px;font-size: 13px; background:#fff;color:#444;"  (click)='sendCode(myForm.value.phone)'>{{securityCodeTime == 0 ? '获取验证码': securityCodeTime+'s'}}</span>
+      </ion-item>
+   
+      <button ion-button color='light' type="submit" class="submit-btn">登录</button>
+      <div class='loginSelect' (click)="forgetPassword()">
+        <u>忘记密码?</u>
+      </div>
+    </ion-list>
+   
+  </form>
+</ion-content>

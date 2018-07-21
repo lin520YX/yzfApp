@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>首页</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-slides class="banners" pager="true" autoplay="3000" loop="true" *ngIf="len >=1">
+    <ion-slide *ngFor='let item of slider'>
+      <img [src]='appUrl.apiUrl+item.mediaPath' onerror="this.src='./assets/imgs/default.png'">
+    </ion-slide>
+  </ion-slides>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='saleInputScan()'>
+          <div>
+            <img src="./assets/imgs/home_m1.png">
+            <p>销售录入</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='markExchange()'>
+          <div>
+            <img src="./assets/imgs/home_m2.png">
+            <p>积分兑换</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='orderList()'>
+          <div>
+            <img src="./assets/imgs/home_m3.png">
+            <p>订单中心</p>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='memberRegister()'>
+          <div>
+            <img src="./assets/imgs/home_m4.png">
+            <p>会员注册</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='myMember'>
+          <div>
+            <img src="./assets/imgs/home_m10.png">
+            <p>我的会员</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" (tap)='memberSearch()'>
+          <div>
+            <img src="./assets/imgs/home_m6.png">
+            <p>会员查询</p>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 class="companyInfoNum">
+        <button ion-button clear class="menu-button" (tap)='companyInfo()'>
+          <div>
+            <img src="./assets/imgs/home_m7.png">
+            <p>最新资讯</p>
+          </div>
+        </button>
+        <div class="num" *ngIf='unread'>{{unread}}</div>
+      </ion-col>
+      <!-- 会员回访 -->
+      <ion-col col-4 >
+        <button ion-button clear class="menu-button" (tap)='memberReturnVisit()'>
+          <div>
+            <img src="./assets/imgs/memberVisit@2x.png">
+            <p>会员回访</p>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

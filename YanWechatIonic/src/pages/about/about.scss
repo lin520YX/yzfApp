@@ -1,0 +1,124 @@
+    page-about {
+      .scroll-content{
+        overflow: hidden;
+    }
+      .content {
+        // display: flex;
+        background: #f63c49 !important;
+        position: relative;
+      }
+      
+      .topContent {
+        background: linear-gradient(#f63c49, #e51c2a);
+        height: 45%;
+
+        .title {
+          color: #fff;
+          text-align: center;
+        }
+
+        .grantMarketData {
+          padding: 35px 20px;
+          display: flex;
+          color: #fff;
+          .icon-ios {
+            font-size: 18px !important;
+            font-weight: 800px;
+          }
+          .dataTitle {
+            text-align: center;
+            font-size: 16px;
+          }
+          .dataNum {
+            font-size: 24px;
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+            line-height: 40px;
+          }
+          .ion-md-arrow-round-down {
+            color: #F9B830;
+          }
+          .ion-md-arrow-round-up {
+            color: #3DC12E;
+          }
+          .dataRight {
+            flex: 1;
+            text-align: center;
+            border-right: 1px solid #F3959C;
+          }
+          .dataLeft {
+            flex: 1;
+            text-align: center;
+          }
+          .compara {
+            display: flex;
+            width: 100%;
+            padding: 10px 10px 0px 6px;
+            .comparaRight {
+              flex: 1;
+              span:first-child {
+                display: block;
+                width: 100%;
+                font-size: 10px;
+              }
+              span:nth-child(2) {
+                width: 100%;
+                display: block;
+                margin-top: 10px;
+                font-size: 16px;
+              }
+              border-right: 1px solid #F3959C;
+            }
+            .comparaLeft {
+              flex: 1;
+              span:first-child {
+                display: block;
+                width: 100%;
+                font-size: 10px;
+              }
+              span:nth-child(2) {
+                width: 100%;
+                margin-top: 10px;
+                display: block;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+      .bottomContent {
+        width: 100%;
+        height: 40%;
+        background: #fff;
+        position: absolute;
+        margin: auto;
+        bottom: 0;
+      }
+
+      .rippled {
+        position: absolute;
+        margin: auto;
+        top: 40%;
+        width: 100%;
+      }
+
+      .menu-button {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        height: 100%;
+        div {
+          text-align: center;
+          color: rgb(102,102,102);
+          font-size: 1.3rem;
+          img {
+            width: 60%;
+            height: 60%;
+          }
+          p{
+            margin: 0;
+          }
+        }
+      }
+    }

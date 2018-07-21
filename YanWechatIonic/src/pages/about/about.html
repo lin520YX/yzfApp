@@ -1,0 +1,108 @@
+<ion-content>
+  <div class="topContent">
+    <h4 class="title">生意分析</h4>
+    <div class="grantMarketData">
+      <div class="dataRight">
+        <div class="dataTitle">
+          <div>销售额({{unit}})
+            <ion-icon name="{{ThematchSales>=0?'md-arrow-round-up':'md-arrow-round-down'}}"></ion-icon>
+          </div>
+        </div>
+        <div class="dataNum">{{Themonth}}</div>
+        <div class="compara">
+          <div class="comparaRight">
+            <span>与上月比({{saleUnit}})</span>
+            <span>{{ThematchSales}}</span>
+          </div>
+          <div class="comparaLeft">
+            <span>环比</span>
+            <span>{{TheproporSales|number:'1.2-2'}}%</span>
+          </div>
+        </div>
+      </div>
+      <div class="dataLeft">
+        <div class="dataTitle">
+          <div>消费人数&nbsp;&nbsp;
+            <ion-icon name="{{ThematchConsume>=0?'md-arrow-round-up':'md-arrow-round-down'}}"></ion-icon>
+          </div>
+        </div>
+        <div class="dataNum">{{ThenewConsume}}</div>
+        <div class="compara">
+          <div class="comparaRight">
+            <span>与上月比</span>
+            <span>{{ThematchConsume}}</span>
+          </div>
+          <div class="comparaLeft">
+            <span>环比</span>
+            <span>{{TheproporConsume|number:'1.2-2'}}%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="rippled" src="./assets/imgs/rippled_edge.png">
+  <div class="bottomContent"></div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='salesStatement'>
+          <div>
+            <img src="./assets/imgs/statistics1.png">
+            <p>销售业绩</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='monthlyTask'>
+          <div>
+            <img src="./assets/imgs/statistics2.png">
+            <p>每月任务</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='salesRecord' [navParams]="{'saleType':0}">
+          <div>
+            <img src="./assets/imgs/statistics3.png">
+            <p>销售统计</p>
+          </div>
+        </button>
+      </ion-col>
+
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='exchangeRecord'>
+          <div>
+            <img src="./assets/imgs/statistics5.png">
+            <p>兑换统计</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='storeRanking'>
+          <div>
+            <img src="./assets/imgs/store@2x.png">
+            <p>门店排名</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear class="menu-button" [navPush]='shoppersRanking'>
+          <div>
+            <img src="./assets/imgs/shoppers@2x.png">
+            <p>导购排名</p>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-4 *ngIf='zoneControl'>
+        <button ion-button clear class="menu-button" [navPush]='zoneRanking'>
+          <div>
+            <img src="./assets/imgs/zone@2x.png">
+            <p>区域排名</p>
+          </div>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

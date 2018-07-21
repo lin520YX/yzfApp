@@ -1,0 +1,96 @@
+page-order-result {
+    .content{
+        background:#f5f4f3 !important;
+    }
+    .orderSucInfo{
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        border-bottom: 0.55px solid rgba(229,229,229, 0.5);
+        color: #666;
+        span:first-child{
+
+            width: 30%;
+            text-align: center;
+        }
+        span:last-child{
+            flex: 1;
+        }
+        
+    }
+    .orderSucInfoTwo{
+        background: #fff;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        height: 4rem;
+        border-bottom: 0.55px solid rgba(229,229,229, 0.5);
+        color: #666;
+        span:first-child{
+            flex: 1;
+          padding-left: 10px;
+        }
+        span:last-child{
+            
+            width: 30%;
+        }
+        
+    }
+    .orderSucInfoTwo:last-child{
+        margin-bottom: 50px;
+    }
+    .itemtitle
+    {
+        display: flex;
+        padding: 10px 0;
+       
+        .item1{
+            width: 50%;
+            p{
+                margin: 5px 0;
+                white-space: normal;
+            }
+        }
+        .item2{
+            color: #999;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .cart_num{
+                width: 100px;
+
+                display: flex;
+
+            }
+            
+        }
+        .item3{
+            color: #999;
+            flex:1;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+    }
+    .foodtitle{
+        display: flex;
+        div:first-child{
+            width: 50%;
+        }
+        div:nth-child(2){
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        div:last-child{
+            flex:1;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+    }
+}

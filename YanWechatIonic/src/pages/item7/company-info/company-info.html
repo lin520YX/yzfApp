@@ -1,0 +1,47 @@
+<!--
+  Generated template for the CompanyInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>最新资讯</ion-title>
+  </ion-navbar>
+  <ion-scroll scrollX="true" class="pageMenuSlides" style="height:44px;width:100%;">
+    <div class="swipercontainer">
+      <div class="swiper-slide {{i==I?'bottomLine':''}}" [ngStyle]="{'width':companyList}" *ngFor="let item of menus;let I=index;"
+        tappable (tap)="selectPageMenu($event,I,item.id)">{{item.name}}</div>
+    </div>
+  </ion-scroll>
+</ion-header>
+<ion-content>
+  <ion-slides #comInfo #contentSlides (ionSlideDidChange)="slideChanged()" style="background:#f5f4f3;">
+    <ion-slide *ngFor="let item of topics;let q=index">
+      <ion-content>
+        <ion-refresher (ionRefresh)="doRefresh($event,q,item.id)">
+          <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="刷新中" refreshingSpinner="circles" refreshingText="下拉刷新"></ion-refresher-content>
+        </ion-refresher>
+        <ion-list *ngFor="let it of item.data">
+          <ion-item style="margin-top:10px;" *ngFor='let i of it.data' (tap)='companyinfodetail(i.id)' class="redTop">
+
+            <ion-label style='white-space:normal !important;'>
+              <div class="{{i.whether=='true'?'':'redtop'}}"></div>
+              <h3 style="color: #666;">{{i.remark}}</h3>
+              <p style="color: #999;">{{i.startTime.time|date:'yyyy-MM-dd'}}</p>
+            </ion-label>
+            <ion-thumbnail item-end>
+              <img [defaultImage]='defaultImage' [lazyLoad]='appUrl.apiUrl+i.pic' [offset]='offset' [scrollObservable]="srollEvent$">
+              <!-- <img [src]="" alt="" onerror="this.src='assets/imgs/default.png'" > -->
+            </ion-thumbnail>
+          </ion-item>
+          <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf='it.hasNextPage'>
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="上拉加载更多...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </ion-list>
+
+      </ion-content>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,207 @@
+page-order-list {
+  .toolbar .searchbar-md .searchbar-input {
+    background: #f8f6f6;
+    border-radius: 20px;
+}
+.header{
+  border-bottom: 2px solid rgba(229, 229, 229, 1) !important;
+
+}
+.searchbar-md .searchbar-search-icon {
+  left: 15px;
+  top: 9px;
+  width: 21px;
+  height: 21px;
+ 
+}
+.select-ios .select-icon {
+  position: relative;
+  width: 24px;
+  height: 18px;
+}
+.select-ios {
+  padding: 7px 0px 7px 7px !important;
+  background: #fff !important;
+  border-radius: 3px;
+  width: 100% !important;
+  text-align: center;
+}
+
+.searchbar-md.searchbar-left-aligned .searchbar-input {
+    padding-left: 30px;
+}
+.searchbar-md .searchbar-input {
+    padding: 0 28px;
+    border-radius: 5px;
+    height: 3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000;
+    background-color: #eee;
+}
+.searchbar-input {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    box-shadow: none !important; 
+}
+  .content {
+    background: #fff !important;
+  }
+  .toolbar .searchbar-ios .searchbar-input {
+    background: rgba(248, 246, 246, 1);
+    border-radius: 20px;
+  }
+  .tabChange{
+    display: flex;
+    height: 4rem;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    div{
+     flex: 1;
+     display: flex;
+     height: 4rem;
+     justify-content: center;
+     font-size: 1.6rem;
+     align-items: center;
+     span{
+       height: 4rem;
+       line-height: 4rem;
+       width: 60%;
+       text-align: center;
+     }
+     span.bg{
+       border-bottom: 3px solid red;
+       color: red;
+     }
+    }
+  }
+  .headDiv {
+  	overflow: hidden;
+    display: flex;
+    height: 5rem;
+    background: #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: #333333;
+    }
+    ion-item {
+      background: #f6f6f6;
+      border: none;
+    }
+    .label-ios {
+      margin: 11px 8px 11px 11px;
+      color: #333;
+      font-weight: 320;
+    }
+    ion-select{
+      border: 1px solid #ccc;
+    }
+    .item-ios {
+      padding-left: 0;
+      border-radius: 0;
+      position: relative;
+      font-size: 1.7rem;
+      color: #000;
+      -webkit-transition: background-color 200ms linear;
+      transition: background-color 200ms linear;
+    }
+    .timetype {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .storetype {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .orderListli {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid #ccc;
+    div:nth-child(2) {
+      width: 50%;
+      p:first-child {
+        color: #999;
+        font-size: 1.5rem;
+      }
+      p:last-child {
+        color: #ccc;
+        font-size: 1.3rem;
+      }
+    }
+    div:first-child {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        width: 3rem;
+        border-radius: 50%;
+        color: #fff;
+        font-weight: 500;
+       
+      }
+      .refund{
+        background: goldenrod;
+      }
+      .sale{
+        background: green;
+      }
+    }
+    div:last-child {
+      flex: 1;
+      color: #999;
+      font-size: 1.5rem;
+    }
+  }
+
+  .memberPhone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    height: 60px;
+    div {
+      background: #fff;
+      border-radius: 18px;
+      height: 36px;
+      width: 80%;
+      border: #ccc solid 1px;
+      padding-left: 18px;
+      margin-left: 16px;
+      line-height: 36px;
+      input {
+        background: #fff;
+        height: 30px;
+        width: 80%;
+      }
+    }
+    span {
+      width: 15%;
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+  .returnFootFont{
+    font-size: 2rem;
+  }
+ 
+}

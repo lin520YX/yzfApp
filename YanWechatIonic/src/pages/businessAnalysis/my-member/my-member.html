@@ -1,0 +1,57 @@
+<ion-header class="memberPr">
+
+  <ion-navbar id='navbar'>
+    <ion-title>我的会员</ion-title>
+    <ion-buttons end >
+      <button ion-button icon-only (tap)="openModal()">
+        <span class="sNameType">
+          {{sName}}
+        </span>
+        <ion-icon name="md-arrow-dropdown"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="myMemberTitle">
+    <div>姓名</div>
+    <div>手机</div>
+    <div>可用积分</div>
+  </div>
+</ion-header>
+<ion-content>
+ 
+  <div class="myMemberC" *ngFor='let item of memberdataArray' (tap)='memberMain(item.id)'>
+    <div>{{item.name}}</div>
+    <div>{{item.phone}}</div>
+    <div>{{item.now_acc_num}}</div>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf='moreData'>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+<div class="timeContent" [ngStyle]="{top:device  }" *ngIf='timeSelect;' (click)='timeOption($event)'>
+   <div class="dateContent">
+      <div class="timeBtnTitle">时间选择</div>
+    <div class="timeBtnC">
+      <ul>
+        <li *ngFor='let item of mItems' (tap)='Select(item.type)' class="{{item.checked==true?'active':''}}">{{item.itemName}}</li>
+      </ul>
+    </div>
+    <div class="timeBtnTitle">自定义</div>
+    <div class="timeInput">
+      <div>
+          <span>开始时间</span>
+          <ion-item no-lines>
+              <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="startTime" doneText="确定" cancelText="取消"></ion-datetime>
+            </ion-item>
+      </div>
+      <div>
+          <span>结束时间</span>
+          <ion-item no-lines>
+              <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="endTime" doneText="确定" cancelText="取消"></ion-datetime>
+            </ion-item>
+      </div>
+    </div>
+    <button (tap)='timeZoneSelect()' class="qbtn">确定</button>
+   </div>
+  </div>

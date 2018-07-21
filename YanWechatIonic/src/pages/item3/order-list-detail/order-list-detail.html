@@ -1,0 +1,97 @@
+<!--
+  Generated template for the OrderListDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>订单详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <div class="storeName">
+      {{storeName}}
+  </div>
+  <div class="orderListDetail">
+    <span>会员手机：</span>
+    <span>{{phone}}</span>
+  </div>
+  <div class="orderListDetail">
+    <span>订单时间：</span>
+    <span>{{orderTime|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+  </div>
+  <div class="orderListDetail">
+    <span>订单编号：</span>
+    <span>{{receipt}}</span>
+  </div>
+  <ion-list>
+    <ion-list-header>
+       订单内容
+    </ion-list-header>
+    <ion-list-header style='background:#f5f4f3'>
+       <div class="foodtitle">
+         <div>商品名称</div>
+         <div>数量</div>
+         <div>金额</div>
+       </div>
+    </ion-list-header>
+    <ion-item *ngFor='let item of goods'>
+        <div class="itemtitle">
+            <div class="item1">
+                <p>{{item.goodsDesc}}</p>
+            </div>
+            <div class="item2">     
+              {{item.num}}{{item.state==1 ? 'g' : '件'}}
+            </div>
+            <div class="item3">¥{{item.saleAmount|number:'1.2-2'}}</div>
+        </div>
+    </ion-item>
+    <ion-list-header *ngIf='gifts.length>0' style='background:#f5f4f3'>
+       <div class="foodtitle">
+         <div>赠品名称</div>
+         <div>数量</div>
+         <div></div>
+       </div>
+     </ion-list-header>
+     <ion-item *ngFor='let item of gifts'>
+         <div class="itemtitle">
+             <div class="item1">
+                 <p>{{item.goodsDesc}}</p>
+             </div>
+             <div class="item2">     
+               {{item.num}}{{item.state==1 ? 'g' : '件'}}
+             </div>
+             <div class="item3"></div>
+         </div>
+     </ion-item>
+  </ion-list>
+  <div class="orderList">
+    <span>订单金额</span><span>¥{{totalAmout|number:'1.2-2'}}</span>
+  </div>
+  <div class="orderList">
+    <span>实付金额</span><span>¥{{saleAmount|number:'1.2-2'}}</span>
+  </div>
+  <div class="orderList" *ngFor='let act of acts'>
+    <span>参加活动</span><span>{{act.actName}}</span>
+  </div>
+  <div class="orderList" style="margin-top:3rem;" >
+    <span style="width:30%">备注信息</span><span style="width:69%;min-height:2rem;line-height:2rem">{{memo}}</span>
+  </div>
+</ion-content>
+<ion-footer *ngIf='status==0 && canReturn==1'>
+    <div class="bottom-div">
+       <div class="submit">
+        <div (tap)='submit()'>
+          <p>
+            <ion-icon name='gou'></ion-icon>
+          </p>
+          <h4>
+            退货
+          </h4>
+        </div>
+      </div>
+    </div>
+</ion-footer>

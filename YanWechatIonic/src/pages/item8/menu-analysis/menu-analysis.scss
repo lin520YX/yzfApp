@@ -1,0 +1,47 @@
+page-menu-analysis {
+    .content{
+        background:#ffffff !important;
+    }
+    .groupSelect{
+        background: rgb(228, 225, 225);
+        color: #444;
+        overflow: hidden;
+        .select-md .select-icon .select-icon-inner {
+          color: #444;
+        }
+        .select-ios .select-icon .select-icon-inner {
+          color: #444;
+        }
+    }
+    .menuAnalysisTableTitle{
+      color: #666;
+      background: #f6f6f6;
+      height: 4rem;
+      align-items: center;
+      display: flex;
+      .projectName{
+        width: 25%;
+        text-align: center;
+      }
+      .item-Name{
+        flex: 1;
+        text-align: center;
+      }
+    }
+    .menuAnalysisTableBody{
+      color: #666;
+      height: 4rem;
+      align-items: center;
+      display: flex;
+      border: 1px solid rgba(229, 229, 229, .8);
+      .projectName{
+        width: 25%;
+        text-align: center;
+      }
+      .item-Name{
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+}

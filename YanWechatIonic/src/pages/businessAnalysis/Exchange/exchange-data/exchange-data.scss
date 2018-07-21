@@ -1,0 +1,73 @@
+page-exchange-data {
+
+  .content {
+    background: #fff !important;
+  }
+  .headDiv {
+
+    display: flex;
+    height: 4rem;
+    background: #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: #333333;
+    }
+    ion-item {
+      background: #f6f6f6;
+      border: none;
+    }
+    .label-ios {
+      margin: 11px 8px 11px 11px;
+      color: #333;
+      font-weight: 320;
+    }
+    .item-ios {
+      padding-left: 0;
+      border-radius: 0;
+      position: relative;
+      font-size: 1.7rem;
+      color: #000;
+      -webkit-transition: background-color 200ms linear;
+      transition: background-color 200ms linear;
+    }
+    .timetype {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .storetype {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .orderList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    border-bottom: 0.55px solid rgba(229,229,229,0.3);
+    color: #666;
+    div:nth-child(2) {
+      width: 24%;
+      text-align: center;
+    }
+    div:first-child {
+      width: 52%;
+      padding-left: 10px;
+    }
+    div:last-child {
+      width: 24%;
+      text-align: right;
+      padding-right: 20px;
+    }
+  }
+  .listHeader {
+    background: #eee;
+    font-size: 1.6rem;
+  }
+}

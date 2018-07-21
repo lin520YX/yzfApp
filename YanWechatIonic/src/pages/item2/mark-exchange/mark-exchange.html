@@ -1,0 +1,61 @@
+<!--
+  Generated template for the MarkExchangePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>积分兑换</ion-title>
+  </ion-navbar>
+  <ion-scroll scrollX="true" class="pageMenuSlides" style="height:44px;width:100%;">
+    <div class="swipercontainer">
+      <div class="swiper-slide {{menuIndex==I?'bottomLine':''}}" style="width:33%;" *ngFor="let item of menus;let I=index;" tappable (tap)="selectPageMenu(I)">{{item.name}}</div>
+    </div>
+  </ion-scroll>
+  <div class="decoration"></div>
+  <div class="memberPhone">
+    <div>
+      <ion-icon name="search"></ion-icon>
+      <input type="tel" placeholder="请输入会员手机号" [(ngModel)]="phone">
+    </div>
+    <span (tap)="findMemberIntegral()">搜索</span>
+  </div>
+  <div class="markUseState" *ngIf='mark'>
+    <div>
+      <p>累计积分</p>
+      <p>{{usedMark}}</p>
+    </div>
+    <div>
+      <p>可用积分</p>
+      <p>{{canUseMark}}</p>
+    </div>
+    <div>
+      <p>已用积分</p>
+      <p>{{usedMark-canUseMark}}</p>
+    </div>
+  </div>
+  <!-- <components-colorbar></components-colorbar> -->
+</ion-header>
+<ion-content>
+  <div class="cate_content">
+    <div class="cate_right" #containe>
+      <ion-row >
+       
+        <ion-col col-4 *ngFor="let item of dataList;let i = index;" >
+            <div class="zz" (tap)='goodsSelect(i)'></div>
+          <ion-checkbox *ngIf='item.sale>=0' color="danger" class="check" [(ngModel)]="item.checked" readonly="readonly"></ion-checkbox>
+          <img [defaultImage]='defaultImage' [lazyLoad]='apiUrl.apiUrl+item.pic'  [offset]='offset' [scrollObservable]="srollEvent$" [scrollTarget]="containe" >
+          <p>{{item.goodsName}}</p>
+          <p>兑换值：{{item.exchangeVal}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar (tap)='submit()'>
+    <ion-title style="text-align: center;">马上兑换</ion-title>
+
+  </ion-toolbar>
+</ion-footer>

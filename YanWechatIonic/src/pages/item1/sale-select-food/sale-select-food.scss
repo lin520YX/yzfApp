@@ -1,0 +1,180 @@
+page-sale-select-food {
+    .itemcol{
+        background: #ccc;
+        color: #f6f6f6;
+        margin: 3px 0;
+    }
+    .pageMenuSlides {
+        height: 48px !important;
+        border-bottom: .05rem solid #ccc;
+        .swipercontainer {
+          width: 100%;
+          height: 48px;
+        }
+        background: #fff;
+        .swiper-slide {
+          color: #999;
+          font-size: 16px;
+          float: left;
+        } 
+        .bottomLine {
+          color: #da0a1a;
+        }
+        .bottomLine:after {
+          content: '';
+          position: absolute;
+          left: 20%;
+          top: auto;
+          bottom: 0;
+          right: auto;
+          height: 2px;
+          width: 60%;
+          background-color: #da0a1a;
+        }
+      }
+    .content{
+        background:#fff !important;
+    }
+    .item-md.item-block .item-inner {
+       padding-right: 0 !important;
+        border-bottom: 1px solid #dedede;
+    }
+    .cate_content{
+        width:100%;
+        height: 100%;  /*首先看高度100% 是否管用  如果没有作用我们要给元素设置绝对定位*/
+        display: flex;
+    
+        .cate_left{
+            width: 80px;
+            height: 100%;
+            overflow-y: auto;
+            color: #666;
+            border: .55px solid rgba(30, 30, 30, .3);
+            border-bottom: none;
+            ul{
+                margin: 0;
+                padding:0;
+            }
+            ul>li{
+               
+                list-style: none;
+                height: 45px;
+                text-align: center;
+                line-height: 45px;
+                font-size: 1rem;
+                border-bottom:.05rem solid #ccc;
+                border-right:.05rem solid #ccc;
+                
+            }
+            .noactive{
+                background: #eee;
+                color: #000;
+                transition: background  200ms linear;
+
+            }
+            .sactive{
+                border-left:.1rem solid #da0a1a;
+                background: #fff;
+                color: #da0a1a;
+                border-right: none;
+                transition: background  200ms linear;
+            }
+
+            
+    
+        }
+        .check{
+            position: absolute;
+            z-index: 99;
+            top:5px;
+            right:10px;
+        }
+        .cate_right{
+            height: 100%;
+            flex:1;
+            overflow-y: auto;
+            padding-top: 10px;
+            ion-label{
+                font-size: 1.4rem;
+            }
+    
+            ion-col{
+                margin-left: -0.05rem;
+                margin-top: -0.05rem;
+                p{
+                    text-align: left;
+                    padding: 0 10px;
+                    color: #666;
+                    font-size: 12px;
+                }
+                img{
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 90%;
+                    position: relative;
+                }
+            }
+            ion-col:nth-child(3n){
+    
+                border-right: 0px;
+            }
+            
+        }
+    }
+    .select{
+        border-top:.05rem solid #ccc;
+        display: flex;
+        height: 50px;
+        background: #da0a1a;
+        .caculator,.verify{
+            flex: 1;
+        }
+        .caculator{
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ion-icon{
+                font-size: 2.4rem;
+            }
+            div:first-child{
+                width: 40%;
+                text-align: center;
+                color: #da0a1a;
+                .cart{
+                    position: relative;
+                }
+                span{
+                    position: absolute;
+                    top:10px;
+                    display: inline-block;
+                    min-width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    border-radius: 50%;
+                    background: #da0a1a;
+                    color:#fff;
+                    font-size: 12px;
+                }
+            }
+            div:last-child{
+               flex: 1;
+               span:first-child{
+                   font-size: 12px;
+                   color: #ccc;
+               }
+               span:last-child{
+                font-size: 14px;
+                color: #da0a1a;
+            }
+            }
+        }
+        .verify{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}

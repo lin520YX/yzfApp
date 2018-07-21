@@ -1,0 +1,60 @@
+page-consumption-record {
+  .content {
+    background: #ffffff !important;
+  }
+  .consumptionTitle {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      font-size: 16px;
+    }
+  }
+  .consumptionContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    padding: 30px 0;
+    border-bottom: .55px solid rgba(30, 30, 30, .3);
+    div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      font-size: 1.5rem;
+      p {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #666;
+      }
+      span {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+      .type0 {
+        background: #45af51;
+      }
+      .type1 {
+        background: #E85252;
+      }
+      .type2 {
+        background: #E8BF11;
+      }
+    }
+  }
+}

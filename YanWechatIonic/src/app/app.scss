@@ -1,0 +1,167 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.input-ios[clearInput] .text-input {
+  padding-right: none!important; 
+}
+.input-md[clearInput] .text-input {
+    padding-right: none!important; 
+}
+.content {
+  background: #f5f4f3;
+}
+::-webkit-scrollbar {
+  display: none !important;
+}
+.toolbar-background {
+  background: #D6000E;
+}
+
+.toolbar-title {
+  color: #fff;
+}
+
+.bar-button {
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: #D6000E;
+}
+
+p {
+  -webkit-margin-before: 0.4em;
+  -webkit-margin-after: 0.4em;
+}
+
+
+.col {
+  padding: 0;
+}
+
+html,
+body,
+ion-app {
+  overflow: hidden;
+}
+html,
+body,
+ion-app,
+ion-content,
+ion-page,
+.nav-decor,
+content-md,
+content-ios,
+ion-app.ios,
+.fixed-content,
+.scroll-content {
+  background-color: transparent !important;
+}
+
+// 时间
+.picker-ios .picker-below-highlight {
+  left: 0;
+  top: 120px !important;
+  -webkit-transform: translate3d(0, 0, 90px);
+  transform: translate3d(0, 0, 90px);
+  position: absolute;
+  z-index: 11;
+  display: block;
+  width: 100%;
+  height: 119px;
+  border-top: 1px solid #c8c7cc;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, white), to(rgba(255, 255, 255, 0.7)));
+  background: linear-gradient(to top, white 30%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+page-order-list .select-text {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 6rem !important;
+  min-width: 25px;
+  font-size: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select-ios .select-icon {
+  position: relative;
+  width: 16px;
+  height: 18px;
+}
+
+page-order-list .select-ios {
+  padding: 11px 0px 11px 7px !important;
+  background: #fff !important;
+  border-radius: 3px;
+}
+
+ion-select{
+  max-width: 100%;
+  text-align: right;
+}
+
+.list-header-ios {
+  padding-left: 16px;
+  padding-left: 16px;
+  position: relative;
+  border-bottom: 0.55px solid rgba(229,229,229, 0.5);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #999;
+  background: transparent;
+}
+.item-md.item-block .item-inner {
+  padding-right: 8px;
+   border-bottom: none !important;
+}
+.popover-ios{
+  border-radius: none!important;
+}
+.popover-ios .popover-content {
+ 
+  top: 65px !important;
+  left: 0px !important;
+  transform-origin: right top 0px;
+  width: 100% !important; 
+  min-width: 0;
+  min-height: 0;
+  max-height: 90%;
+  color: #000;
+  background: #fff;
+  border-radius: none!important;
+}
+.popover-md .popover-content {
+  border-radius: none!important;
+  top: 56px!important ;
+  left: 0px !important;
+  transform-origin: right top 0px;
+  transform: scale(1);
+  -webkit-transform-origin: none none !important;
+  transform-origin: none none !important;
+  width: 100% !important; 
+  min-width: 0;
+  min-height: 0;
+  max-height: 100%;
+  color: #000;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.3);
+}

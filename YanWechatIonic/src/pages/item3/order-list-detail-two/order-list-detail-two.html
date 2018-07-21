@@ -1,0 +1,77 @@
+<!--
+  Generated template for the OrderListDetailTwoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>可退商品详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="returnDetailForm">
+    <div class="r_list">
+      <span>会员手机</span>
+      <span>{{phone}}</span>
+    </div>
+  </div>
+  <components-colorbar></components-colorbar>
+  <div class='module'>
+    <ion-list>
+      <ion-list-header>
+        商品
+      </ion-list-header>
+      <ion-list-header style='background:#f5f4f3'>
+        <div class="foodtitle">
+          <div>商品名称</div>
+          <div>数量</div>
+          <div>金额</div>
+        </div>
+      </ion-list-header>
+      <div *ngFor='let ite of goods;let index=index'>
+        <ion-item mode='ios'>
+          <div class="itemtitle">
+            <div class="item1">
+              <p>{{ite.goodsName}}</p>
+            </div>
+            <div class="item2">
+              <div class="cart_num">
+                <div class="input_c" *ngIf='ite.source==1'>
+                  <span>{{ite.num}}g</span>
+                </div>
+                <div class="input_center" *ngIf='ite.source==0'>
+                  {{ite.num}}
+                </div>
+              </div>
+            </div>
+            <div class="item3">{{ite.saleAmount}}</div>
+          </div>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+  <ion-item no-lines style="color:#444;" mode='ios'>
+    <ion-label style=" text-align: center;
+      line-height: 63px;">
+      备注
+    </ion-label>
+    <ion-textarea style="background: #c8c7cc;" cols="5" rows="2" [(ngModel)]='memo'>
+    </ion-textarea>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <div class="select">
+    <div class="caculator">
+      <div>
+        退货金额：
+        <span>¥{{total|number:'1.2-2'}}</span>
+      </div>
+    </div>
+    <div class="verify">
+      <div (tap)='orderSuc()'>
+        确认退货
+      </div>
+    </div>
+  </div>
+</ion-footer>
