@@ -8,15 +8,10 @@ import { ParamsPublic } from '../../publics/public';
 
 @Injectable()
 export class AppGlobal {
-    // public apiUrl = 'http://hyxt.yanzhifang.com';
-    // static domain = "http://hyxt.yanzhifang.com/api/";
-    // 8080测试端口
-    public apiUrl = 'http://hyxt.yanzhifang.com:8080';
-    static domain = "http://hyxt.yanzhifang.com:8080/api/";
-    // public apiUrl = 'http://192.168.1.222:8201';
-    // static domain = "http://192.168.1.222:8201/api/";
-    // public apiUrl = 'http://192.168.1.222:8200';
-    // static domain = "http://192.168.1.222:8200/api/";
+
+    public apiUrl = '';
+    static domain = "";
+   
     static headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
 }
 @Injectable()
